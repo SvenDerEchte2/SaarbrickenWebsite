@@ -5,7 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>Startseite - Unsere Stadt</title>
     <style>
-        /* Gleiche Styles wie vorher (kannst du natürlich auslagern) */
         body {
             font-family: Arial, sans-serif;
             margin: 0;
@@ -13,16 +12,30 @@
             flex-direction: column;
             min-height: 100vh;
         }
+
         header {
+            position: relative;
             width: 100%;
-            height: 150px;
-            background-image: url('https://via.placeholder.com/1200x150.png?text=Header-Bild');
+            height: 400px;
+            background-image: url('Hintergrund.png');
             background-size: cover;
             background-position: center;
         }
+
+        header .wappen {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 350px;
+            height: auto;
+            z-index: 2;
+        }
+
         nav {
             background-color: #4CAF50;
         }
+
         nav ul {
             margin: 0;
             padding: 0;
@@ -31,10 +44,12 @@
             justify-content: center;
             flex-wrap: wrap;
         }
+
         nav ul li {
             position: relative;
             margin: 0 15px;
         }
+
         nav ul li a {
             display: block;
             padding: 15px 10px;
@@ -43,9 +58,11 @@
             font-weight: bold;
             white-space: nowrap;
         }
+
         nav ul li a:hover {
             background-color: #45a049;
         }
+
         nav ul li ul {
             display: none;
             position: absolute;
@@ -59,20 +76,21 @@
             z-index: 1000;
             box-shadow: 0 2px 5px rgba(0,0,0,0.2);
         }
-        nav ul li ul li {
-            margin: 0;
-        }
+
         nav ul li ul li a {
             padding: 10px 15px;
             font-weight: normal;
             border-top: 1px solid #3e8e41;
         }
+
         nav ul li ul li a:hover {
             background-color: #45a049;
         }
+
         nav ul li:hover > ul {
             display: block;
         }
+
         main {
             flex: 1;
             padding: 20px;
@@ -82,7 +100,10 @@
     </style>
 </head>
 <body>
-    <header></header>
+    <header>
+        <img src="wappen.png" alt="Stadtwappen" class="wappen">
+    </header>
+
     <nav>
         <ul>
             <li><a href="index.html">Startseite</a></li>
@@ -123,10 +144,20 @@
                     <li><a href="kontakt.html">Kontakt</a></li>
                 </ul>
             </li>
+            <li>
+                <a href="gemeinden.html">Gemeinden</a>
+                <ul>
+                    <li><a href="saarbricken.html">Saarbricken</a></li>
+                    <li><a href="moorstein.html">Moorstein</a></li>
+                    <li><a href="steinfelden.html">Steinfelden</a></li>
+                    <li><a href="steinburg.html">Steinburg</a></li>
+                </ul>
+            </li>
             <li><a href="geschichte.html">Geschichte</a></li>
             <li><a href="news.html">News</a></li>
         </ul>
     </nav>
+
     <main>
         <h1>Willkommen auf der Startseite!</h1>
         <p>Hier findest du Informationen zu unserer Stadt und ihren Angeboten.</p>
